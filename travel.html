@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Discover with Us</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9fafb;
+      color: #222;
+      overflow-x: hidden;
+    }
+
+    .navbar-custom {
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 15px 0;
+      transition: all 0.4s ease;
+    }
+
+    .navbar-custom:hover {
+      background: rgba(0, 40, 100, 0.9);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .navbar-custom .navbar-brand {
+      font-size: 28px;
+      color: #ffd700;
+      font-weight: bold;
+    }
+
+    .navbar-custom .navbar-nav > li > a {
+      color: #fff;
+      font-weight: 600;
+      font-size: 16px;
+      position: relative;
+    }
+
+    .navbar-custom .navbar-nav > li > a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #ffd700;
+      transition: width 0.4s;
+      margin: auto;
+    }
+
+    .navbar-custom .navbar-nav > li > a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      background: url('https://tse1.mm.bing.net/th/id/OIP.kITSe6TJJE5qsDsTjiOmKgHaEJ?pid=ImgDet&w=191&h=106&c=7&o=7&rm=3') center center / cover fixed no-repeat;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #fff;
+      max-width: 700px;
+      animation: fadeInDown 2s ease-in-out;
+    }
+
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.4rem;
+      margin-bottom: 30px;
+    }
+
+    .btn-hero {
+      background: #ffd700;
+      color: #003366;
+      padding: 14px 40px;
+      font-size: 18px;
+      border-radius: 40px;
+      font-weight: bold;
+      transition: all 0.4s ease;
+      border: none;
+    }
+
+    .btn-hero:hover {
+      background: #fff176;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(255, 215, 0, 0.5);
+    }
+
+    section {
+      padding: 80px 0;
+      animation: fadeInUp 1.2s ease-in-out both;
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.8rem;
+      font-weight: bold;
+      color: #003366;
+      margin-bottom: 60px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: #ffd700;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      margin-bottom: 30px;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 16px 30px rgba(0,0,0,0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .card-title {
+      font-size: 1.6rem;
+      color: #003366;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .card-text {
+      color: #555;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .btn-destination {
+      margin-top: 10px;
+      background: #003366;
+      color: #ffd700;
+      border-radius: 30px;
+      padding: 8px 22px;
+      font-weight: 600;
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-destination:hover {
+      background-color: #001a40;
+      color: #fff;
+    }
+
+    #contact {
+      background: linear-gradient(135deg, #003366 50%, #002244 100%);
+      color: white;
+    }
+
+    .form-control {
+      border-radius: 10px;
+      padding: 15px;
+      border: none;
+    }
+
+    .form-control:focus {
+      box-shadow: 0 0 8px #ffd700;
+    }
+
+    .btn-submit {
+      background: #ffd700;
+      border: none;
+      padding: 12px 35px;
+      border-radius: 50px;
+      font-weight: bold;
+      transition: all 0.4s ease;
+    }
+
+    .btn-submit:hover {
+      background: #fff176;
+      transform: translateY(-4px);
+      color: #002244;
+    }
+
+    footer {
+      background: #001a33;
+      padding: 40px 0;
+      text-align: center;
+      color: #ffd700;
+    }
+
+    .social-icons a {
+      font-size: 22px;
+      margin: 0 10px;
+      color: #ffd700;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero p {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-custom navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu">
+          <span class="icon-bar" style="background-color:#ffd700;"></span>
+          <span class="icon-bar" style="background-color:#ffd700;"></span>
+          <span class="icon-bar" style="background-color:#ffd700;"></span>
+        </button>
+        <a class="navbar-brand" href="#">DWU</a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-menu">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Explore The World With Us</h1>
+      <p>Your adventure starts here. Discover new places and unforgettable experiences.</p>
+      <a href="#destinations" class="btn btn-hero">Start Exploring</a>
+    </div>
+  </section>
+
+  <section id="destinations" class="container">
+    <h2 class="section-title">Top Destinations</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="c:\Users\user\Desktop\chekpoint\paris.webp" alt="Paris">
+          <div class="card-body">
+            <h3 class="card-title">Paris, France</h3>
+            <p class="card-text">Experience the romantic city of lights with world-class cuisine, art, and culture.</p>
+            <a href="#" class="btn btn-destination">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="c:\Users\user\Desktop\chekpoint\bali.webp" alt="Bali">
+          <div class="card-body"            <h3 class="card-title">Bali, Indonesia</h3>
+            <p class="card-text">Relax on stunning beaches, explore vibrant culture and tropical forests.</p>
+            <a href="#" class="btn btn-destination">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="c:\Users\user\Desktop\chekpoint\tn.webp" alt="Tunisia">
+          <div class="card-body">
+            <h3 class="card-title">Tunisia, Africa</h3>
+            <p class="card-text">Discover ancient ruins, Mediterranean beaches, and vibrant souks in a land of rich history.</p>
+            <a href="#" class="btn btn-destination">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <form>
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            <input type="text" class="form-control" placeholder="Your Name" required>
+          </div>
+          <div class="col-sm-6 form-group">
+            <input type="email" class="form-control" placeholder="Your Email" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <select class="form-control" required>
+            <option disabled selected>Destination of Interest</option>
+            <option>Paris</option>
+            <option>Bali</option>
+            <option>Tunisia</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" rows="5" placeholder="Your Message" cols="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="social-icons">
+        <a href="#"><i class="fa fa-facebook-official"></i></a>
+        <a href="#"><i class="fa fa-twitter-square"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-linkedin-square"></i></a>
+      </div>
+      <p>&copy; 2025 DWU Travel Agency. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+
+
+
+
+
